@@ -9,10 +9,10 @@ import os
 import numpy as np
 
 train = ImageDataGenerator(rescale=1/255)
-test = ImageDataGenerator(rescale=1/255)
+validation = ImageDataGenerator(rescale=1/255)
 
 train_dataset = train.flow_from_directory('Dataset/Train',target_size=(200,200),batch_size=3,class_mode='binary')
-validation_dataset = train.flow_from_directory('Dataset/Validation',target_size=(200,200),batch_size=3,class_mode='binary')
+validation_dataset = validation.flow_from_directory('Dataset/Validation',target_size=(200,200),batch_size=3,class_mode='binary')
 train_dataset.class_indices
 
 model = tf.keras.Sequential([
